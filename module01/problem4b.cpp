@@ -1,3 +1,15 @@
+/*
+
+Nick Hinke
+09/04/2022
+605.204 - Computer Organization
+Module 1: Assignment 1
+
+Problem 4B:
+The purpose of this program is to convert a string in binary format to a string in hex format.
+
+*/
+
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,8 +17,10 @@
 
 using namespace std;
 
+// global hex character lookup table
 char hex_table[17] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', '\0'}; 
 
+// function to convert binary string to hex string
 string bin2hex(string bin) {
 
     string hex = string("0x");
@@ -14,7 +28,7 @@ string bin2hex(string bin) {
     // remove leading "0b" if present
     if (bin[0] == '0' && bin[1] == 'b') {
         bin = bin.substr(2);
-        cout << "Removed leading 0b from binary number input to get: " << bin << endl;
+        // cout << "Removed leading 0b from binary number input to get: " << bin << endl;
     }
 
     // check number of bits divisible by four
@@ -42,7 +56,8 @@ int main() {
     string bin = "0b10100011";
     string hex = bin2hex(bin);
 
-    cout << "\nConverted binary: " << bin << " to hex: " << hex << "\n" << endl;
+    cout << "\nConverted binary string: '" << bin << "' to hex string: '" << hex << "'\n" << endl;
 
     return 0;
+
 }

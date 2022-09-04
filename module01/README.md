@@ -27,4 +27,4 @@ Simply execute each of the binaries in the *bin/* directory. For example on a Li
 ./bin/problem4d
 ```
 
-Each binary should print an example input-output sequence to the active terminal.
+Each binary should print out an example input-output sequence to the active terminal.

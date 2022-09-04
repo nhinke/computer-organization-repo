@@ -1,3 +1,15 @@
+/*
+
+Nick Hinke
+09/04/2022
+605.204 - Computer Organization
+Module 1: Assignment 1
+
+Problem 4C:
+The purpose of this program is to convert an integer in decimal format to a string in hex format.
+
+*/
+
 #include <string>
 #include <stdio.h>
 #include <stdlib.h>
@@ -5,8 +17,10 @@
 
 using namespace std;
 
+// global hex character lookup table
 char hex_table[17] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F', '\0'}; 
 
+// function to convert decimal integer to hex string
 string dec2hex(int dec) {
 
     string hex = string("0x");
@@ -37,7 +51,8 @@ int main() {
     int dec = 123456;
     string hex = dec2hex(dec);
 
-    cout << "\nConverted integer: " << dec << " to hex: " << hex << "\n" << endl;
+    cout << "\nConverted decimal integer: " << dec << " to hex string: '" << hex << "'\n" << endl;
 
     return 0;
+
 }
