@@ -28,7 +28,7 @@ main:
 
 .data
   prompt1: .asciz "Enter an integer: "
-  output1: .asciz "Hah! You entered %d, bitch!\n"
+  output1: .asciz "Hah! You entered %d!\n"
   format1: .asciz "%d"
   num1:    .word  0
 # end main
