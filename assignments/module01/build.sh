@@ -6,13 +6,13 @@ if [ -d "bin" ]; then
 fi
 
 # 4a:
-g++ -o bin/problem4a problem4a.cpp -std=c++11 -O0 -Wall -pie -lm
+g++ -o bin/problem4a src/problem4a.cpp -std=c++11 -O0 -Wall -pie -lm
 
 # 4b:
-g++ -o bin/problem4b problem4b.cpp -std=c++11 -O0 -Wall -pie -lm
+g++ -o bin/problem4b src/problem4b.cpp -std=c++11 -O0 -Wall -pie -lm
 
 # 4c:
-g++ -o bin/problem4c problem4c.cpp -std=c++11 -O0 -Wall -pie -lm
+g++ -o bin/problem4c src/problem4c.cpp -std=c++11 -O0 -Wall -pie -lm
 
 # 4d:
-g++ -o bin/problem4d problem4d.cpp -std=c++11 -O0 -Wall -pie -lm
+g++ -o bin/problem4d src/problem4d.cpp -std=c++11 -O0 -Wall -pie -lm
