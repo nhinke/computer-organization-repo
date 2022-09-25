@@ -2,9 +2,9 @@
 
 This directory (*module04/*) contains all of the code written for assignment4. All code was written targetting armv7l and tested on a Raspberry Pi 4 Model B running Raspbian 11. The problems are enumerated as follows:
 
-**4-1.** Ask user for their name/age and print
-**4-2.** Print string with tabs in it
-**4-3.** Print string with quotations in it  
+**4-1.** Ask user for their name/age and print  
+**4-2.** Print string with tabs in it  
+**4-3.** Print string with quotations in it    
 
 ## Build Instructions
 
