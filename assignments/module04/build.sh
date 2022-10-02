@@ -3,6 +3,8 @@
 if [ -d "bin" ]; then
   rm -r bin/
   mkdir bin
+else
+  mkdir bin
 fi
 
 gcc src/problem4-1.s -o bin/problem4-1

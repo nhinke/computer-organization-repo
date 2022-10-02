@@ -3,6 +3,8 @@
 if [ -d "bin" ]; then
   rm -r bin/
   mkdir bin
+else
+  mkdir bin
 fi
 
 # 4a:
