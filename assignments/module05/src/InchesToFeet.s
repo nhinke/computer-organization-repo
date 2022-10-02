@@ -34,7 +34,7 @@ main:
   MOV r1, #12
   MUL r4, r0, r1
    
-  # subtract 12*feet from total inches to get remainar
+  # subtract 12*feet from total inches to get remainder
   LDR r0, =numIn
   LDR r0, [r0, #0]
   SUB r5, r0, r4 
