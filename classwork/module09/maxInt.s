@@ -1,6 +1,7 @@
 # program to compare 2-5 integers to find the maximum
 .global main
 .global numIntsValid
+.global promptForInteger
 
 .text
 main:
@@ -31,14 +32,33 @@ main:
   # if numInts valid, initialize loop
   CMP r0, #1
   BNE endMain
-    # TODO get all integers and store in registers r4-r8 --> do NOT branch to endMain
-    B endMain
+    
+    # count down numInts with counter in r10
+    startLoop:
 
-#  start
-  
+      # check if no remaining integers to compare
+      CMP r10, #0
+      BEQ endLoop
+
+        # get integer input in r0 and compare with current maximum in r9
+        BL promptForInteger
+        SUB r10, r10, #1
+        CMP r0, r9
+        BLE startLoop
+	  MOV r9, r0
+          B startLoop
+
+    endLoop:
+
+	# print result
+	LDR r0, =endLoopStr
+        MOV r1, r9
+        BL printf 	
+        B endMain
+
   endMain:
   
-  # pop the stack
+  # pop stack and return
   LDR lr, [sp, #0]
   ADD sp, sp, #4
   MOV pc, lr
@@ -46,7 +66,7 @@ main:
 .data
   promptNumInts: .asciz "Please enter the number of integers to be compared (2-5): "
   formatInt: .asciz "%d"
-  endLoopStr: .asciz "Maximum integer found: %d"
+  endLoopStr: .asciz "\nMaximum integer found: %d\n"
   numInts: .word 0
 # end main
 
@@ -90,12 +110,43 @@ checkNumIntsValid:
 
   endCheckNumIntsValid:
   
-  # pop the stack
+  # pop stack and return
   LDR lr, [sp, #0]
   ADD sp, sp, #4
   MOV pc, lr
 
 .data
-  validStr: .asciz "Program is ready to compare %d integers to find the maximum\n"
+  validStr: .asciz "Program is ready to compare %d integers to find the maximum\n\n"
   invalidStr: .asciz "ERROR: %d integers is not on the valid range of 2-5 integers for comparison\n"
 # end checkNumIntsValid
+
+
+.text
+# function to prompt user for an integer and return result in r0
+promptForInteger:
+
+  # push the stack
+  SUB sp, sp, #4
+  STR lr, [sp, #0]
+
+  # prompt user for an integer
+  LDR r0, =intPrompt
+  BL printf
+  LDR r0, =intFormat
+  LDR r1, =intValue
+  BL scanf
+
+  # store result in r0
+  LDR r0, =intValue
+  LDR r0, [r0, #0]
+
+  # pop stack and return
+  LDR lr, [sp, #0]
+  ADD sp, sp, #4
+  MOV pc, lr
+
+.data
+  intPrompt: .asciz "Please enter an integer: "
+  intFormat: .asciz "%d"
+  intValue: .word 0
+# end promptForInteger
