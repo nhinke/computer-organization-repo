@@ -20,4 +20,4 @@ maxInt: maxInt.o
 	$(CC) $(@:.o=.s) -g -c -o $@
 
 clean:
-	rm checkChar checkGrade inputLoop maxInt
+	rm $(BINDIR)/checkChar $(BINDIR)/checkGrade $(BINDIR)/inputLoop $(BINDIR)/maxInt
