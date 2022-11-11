@@ -16,4 +16,4 @@ processGrades: processGrades.o
 	$(CC) $(@:.o=.s) -g -c -o $@
 
 clean:
-	rm $(BINDIR)/loopCounter $(BINDIR)/maxInArray $(BINDIR)/processGrades
+	rm $(BINDIR)/loopCounter $(BINDIR)/maxInArray $(BINDIR)/processGrades loopCounter.o maxInArray.o processGrades.o
