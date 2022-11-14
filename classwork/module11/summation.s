@@ -63,6 +63,8 @@ sum:
     ADD r0, r4, r0
     B return
 
+  endif:
+
   # pop stack and return
   return:
     LDR lr, [sp, #0]
